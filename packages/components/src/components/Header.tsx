@@ -12,8 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { AppTheme } from "../app-theme";
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Logout"];
 
 export interface HeaderText {
   text: string;
@@ -46,7 +47,7 @@ export const Header = ({ text, toggles }: HeaderText) => {
 
   return (
     <Box width={"100%"}>
-      <AppBar position="static">
+      <AppBar theme={AppTheme} color={"secondary"} position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <img src={"./logo.png"} width={50} height={30} alt={"logo"} />
@@ -99,11 +100,6 @@ export const Header = ({ text, toggles }: HeaderText) => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {/*{pages.map((page) => (*/}
-                {/*  <MenuItem key={page} onClick={handleCloseNavMenu}>*/}
-                {/*    <Typography textAlign="center">{page}</Typography>*/}
-                {/*  </MenuItem>*/}
-                {/*))}*/}
                 {toggles.map((toggle) => (
                   <MenuItem key={toggle} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{toggle}</Typography>
@@ -131,20 +127,12 @@ export const Header = ({ text, toggles }: HeaderText) => {
               LOGO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {/*{pages.map((page) => (*/}
-              {/*  <Button*/}
-              {/*    key={page}*/}
-              {/*    onClick={handleCloseNavMenu}*/}
-              {/*    sx={{ my: 2, color: "white", display: "block" }}*/}
-              {/*  >*/}
-              {/*    {page}*/}
-              {/*  </Button>*/}
-              {/*))}*/}
               {toggles.map((toggle) => (
                 <Button
+                  color={"primary"}
                   key={toggle}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ mx: 0.5, my: 2, display: "block" }}
                 >
                   {toggle}
                 </Button>

@@ -4,7 +4,7 @@ import {Header} from "@varsityclinic/components";
 function App() {
   return (
     <>
-        <Header text="Client | Varsity Clinic" />
+        <Header text="Client | Varsity Clinic" toggles={[]}/>
     </>
   )
 }

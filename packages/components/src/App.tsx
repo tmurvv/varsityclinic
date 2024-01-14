@@ -1,7 +1,16 @@
 import { Header } from "components";
+import { AppTheme } from "./app-theme";
+import { ThemeProvider } from "@mui/material";
 
 const App = () => {
-  return <Header text={"Varsity Clinic - tech"} toggles={["Providers", "Clients"]}/>;
-}
+  return (
+    <ThemeProvider theme={AppTheme}>
+      <Header
+        text={"Tech | Varsity Clinic"}
+        toggles={["Manager", "Admin", "Provider", "Client"]}
+      />
+    </ThemeProvider>
+  );
+};
 
 export default App;
